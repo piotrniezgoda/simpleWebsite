@@ -1,0 +1,9 @@
+
+@import './global.scss';
+
+.footer {
+  background: $barBlue;
+  height: 4rem;
+  position: relative;
+  z-index: 10;
+}

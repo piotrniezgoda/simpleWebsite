@@ -1,0 +1,114 @@
+
+@import './global.scss';
+
+.sideNav {
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 13.25rem;
+  box-shadow: 1px 0 7px 0 rgba(0, 0, 0, 0.25);
+  height: calc(100% + 100px);
+  position: relative;
+  left: 0;
+  top: -100px;
+  background: #fff;
+  padding: 10.81rem 2.87rem;
+  color: $textColor;
+  font-size: 1.25rem;
+  transition: transform 0.3s;
+  transform: translateX(0);
+
+  &--hidden {
+    transition: transform 0.3s;
+    transform: translateX(-80%);
+  }
+
+  @media (max-width: 1082px) {
+    z-index: 9;
+  }
+}
+
+.sideNav_title {
+  padding: 1.4rem 0;
+  border-bottom: dotted $dotsColor;
+  width: 100%;
+  text-align: center;
+}
+
+.sideNav__menu {
+  width: 100%;
+
+  &1 {
+    margin: 1.56rem 0;
+    padding-bottom: 1.56rem;
+    border-bottom: dotted $dotsColor;
+  }
+
+  &2 {
+    margin: 0 0 1.56rem 0;
+    padding-bottom: 1.56rem;
+    border-bottom: dotted $dotsColor;
+  }
+}
+
+.sideNav__menuItem {
+  &:not(:last-of-type) {
+    margin-bottom: 1.1rem;
+  }
+}
+
+.sideNav__link {
+  color: $textColor;
+  text-decoration: none;
+
+  &:hover {
+    color: #38bcd3;
+  }
+}
+
+.socialMenu__item:not(:last-of-type) {
+  margin-bottom: 1.56rem;
+}
+
+.sideNav__button {
+  position: absolute;
+  right: 0.5rem;
+  top: 35%;
+  padding: 0.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    background: #dae8ef;
+  }
+
+  &::after {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+}
+
+.sideNav__button--afterText::after {
+  content: 'menu';
+  position: absolute;
+  top: 100%;
+  left: -4px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  color: $textColor;
+}
+
+.sideNav__arrowIcon {
+  transform: rotate(0);
+  transition: transform 0.3s;
+}
+
+.sideNav__arrowIcon--opened {
+  transform: rotate(180deg);
+  opacity: 0.7;
+  transition: transform 0.3s;
+}

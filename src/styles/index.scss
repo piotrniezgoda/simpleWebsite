@@ -1,6 +1,7 @@
-$body-color: slateblue;
 
-body {
-  color: $body-color;
-  font-family: sans-serif;
-}
+@import './reset.css';
+@import './global.scss';
+@import './site_header.scss';
+@import './sideMenu.scss';
+@import './site_main_about.scss';
+@import './footer.scss';
